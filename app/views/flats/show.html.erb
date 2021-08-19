@@ -1,0 +1,50 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= @flat.picture_url %> );">
+</div>
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card">
+        <h1> <%= @flat.name %> </h1>
+        <p> <%= @flat.address %> </p>
+      </div>
+      <div class="flat-show-card">
+        <h3> A bit more about this flat... </h3>
+        <p> <%= @flat.description %> </p>
+        <%# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=10 Clifton Gardens London W9 1DT&amp;zoom=13&amp;scale=2&amp;size=1000x1000&amp;maptype=roadmap&amp;markers=color:red%7C10 Clifton Gardens London W9 1DT&amp;key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div> %>
+        <iframe
+          src='https://api.mapbox.com/styles/v1/mapbox/streets-v11.html?title=true&zoomwheel=false&access_token=pk.eyJ1IjoiaWdvcmRlcG9sbGkiLCJhIjoiY2tqcmVobWlpMHhlbTJ6cDVhZWU0eG1pOSJ9.J2jrqkEJO-cILajQb4aAtg#15/37.771/-122.436' width='100%' height='400px' title='Mapbox Styles embed'>
+        </iframe>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="flat-show-card">
+        <h5> Book this place! </h5>
+        <form action="">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Check-in date" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mt-2">
+            <input type="text" class="form-control" placeholder="Check-out date" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form>
+      </div>
+      <div class="flat-show-card">
+        <h3>Details</h3>
+        <div class="d-flex">
+          <i class="material-icons me-2">people</i><span><%= @flat.number_of_guests %></span>
+          <i class="material-icons ms-3 me-2">euro_symbol</i><%= @flat.price_per_night %>
+        </div>
+      </div>
+      <div class="flat-show-card d-flex justify-content-between align-items-center">
+        <h6>Share</h6>
+        <div class="flex">
+            <i class="fa fa-envelope-square fa-2x"></i>
+            <i class="fa fa-envelope-square fa-2x"></i>
+            <i class="fa fa-envelope-square fa-2x"></i>
+            <i class="fa fa-envelope-square fa-2x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
