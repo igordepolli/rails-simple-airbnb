@@ -1,0 +1,27 @@
+<div class="container my-3">
+  <h2>All our Flats (<%= @flats.size %>)</h2>
+  <div class="cards row">
+    <% @flats.each do |flat| %>
+      <div class="col-4">
+        <div class="flat-card">
+            <div class="flat-card-image" style="background-image: url(https://picsum.photos/seed/picsum/200/300)"></div>
+            <div class="flat-card-content">
+              <div class="flat-card-title">
+                <h4><%= flat.name %></h4>
+              </div>
+              <p><%= flat.description %></p>
+              <div class="d-flex">
+                <i class="material-icons me-2">people</i><span><%= flat.number_of_guests %></span>
+                <i class="material-icons ms-3 me-2">euro_symbol</i><%= flat.price_per_night %>
+              </div>
+            </div>
+            <div class="flat-card-actions">
+              <%= link_to 'More info', '#' %>
+              <%= link_to 'Edit', '#', class: "mx-3 text-warning" %>
+              <%= link_to 'Remove', '#',  method: :delete, data: { confirm: 'Are you sure?' }, class: "ml-3 text-danger" %>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
