@@ -2,7 +2,7 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: %i[show edit update destroy]
 
   def index
-    @flats = Flat.all
+    @flats = params[:query] ? Flat.where("name LIKE '%#{params[:query]}%'") : Flat.all
   end
 
   def show; end
@@ -35,10 +35,6 @@ class FlatsController < ApplicationController
   def destroy
     @flat.destroy
     redirect_to root_path
-  end
-
-  def search
-    @flats = Flat.where("name LIKE '%#{params[:query]}%'")
   end
 
   private
