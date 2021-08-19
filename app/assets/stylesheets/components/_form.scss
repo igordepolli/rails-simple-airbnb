@@ -1,0 +1,19 @@
+.flat-form {
+  margin: 0 auto;
+  width: 28em;
+  background-color: #f8f9fa;
+  padding: 24px;
+  border-radius: 3px;
+}
+
+.form-control {
+  background-color: #fff;
+  &:focus {
+    background-color: #fff;
+  }
+  margin: 5px 0;
+}
+
+.form-group {
+  margin: 20px 0;
+}
